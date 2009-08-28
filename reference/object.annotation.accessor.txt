@@ -1,0 +1,75 @@
+[[../reference]] &raquo; [[object]] &raquo; [[object.annotation]] &raquo; [[object.annotation.accessor]]
+* メンバ変数のアクセサ
+Object を継承したクラスのメンバ変数に対して，アノテーション機能（[[object.annotation]]）を利用して，アクセサに対する定義を宣言することができます。
+
+** 型宣言
+変数に型による制限を行うことが出来ます。
+指定できる型は以下の通りです。型が同じですが，モデル定義などで利用しやすい名前を指定することもできます。
+|*指定する値|*概要|
+|string|文字列型|
+|text|文字列型|
+|number|数値型|
+|serial|数値型|
+|boolean|真偽型|
+|timestamp|タイムスタンプ型|
+|date|日付型|
+|time|時間型|
+|strdate|文字列による日付型|
+|intdate|数値による日付型|
+|email|メールアドレス型|
+|alnum|アルファベット＋数値型|
+|choice(abc,def,xyz)|選択式文字列型|
+|mixed|混在型|
+
+*** 宣言例
+>||
+class Sample extends Object{
+	static protected $__abc__ = 'type=number';
+	static protected $__def__ = 'type=string';
+	protected $abc;
+	protected $def = 'wozozo';
+}
+||<
+
+これらの型に対して，配列として保持することもできます。次の項目で解説します。
+
+** 配列宣言
+型宣言をするとき，型名の末尾に「[]」または「{}」を記述することで，その変数に対し，宣言した型の配列とすることが出来ます。
+「[]」を使用した場合は配列に数値でキーが設定され，「{}」を使用する場合は文字列でキーを設定します。これはキーを省略した配列と，添字配列の違いと同様です。
+*** 宣言例
+>||
+class A extends Object{
+	static protected $__abc__ = "type=number[]";
+	static protected $__def__ = "type=string{}";
+	protected $abc;
+	protected $def;
+}
+$obj = new A();
+
+$obj->abc(10);
+Log::d($obj->abc()); // array(10);
+
+$obj->abc(20);
+Log::d($obj->abc()); // array(10,20);
+
+
+$obj->def("aa","ABC");
+Log::d($obj->def()); // array("aa"=>"ABC")
+
+$obj->def("bb","DEF");
+Log::d($obj->def()); // array("aa"=>"ABC","bb"=>"DEF")
+||<
+とくしまんとこからパクった
+
+* 特殊なアクセサ (ar, in, rm)
+[http://tokushimakazutaka.com/229]
+
+* アクセサで真偽判定
+[http://tokushimakazutaka.com/230]
+
+* アクセサによる整形
+[http://tokushimakazutaka.com/231]
+
+* アクセサの拡張
+しらん
+

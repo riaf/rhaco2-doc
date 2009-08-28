@@ -1,0 +1,3 @@
+[[../reference]] &raquo; [[object]] &raquo; [[object.accessor]]
+* メンバ変数のアクセサ
+

@@ -16,7 +16,7 @@ class Sample extends Object {
 *** デフォルトで設定できる値
 |*キー|*概要|*デフォルト値|
 |name|||
-|type||"string"|
+|type|アクセサ（[[object.accessor]]）で使用する型宣言|"string"|
 |attr||null|
 |primary|bool|false|
 |get|bool|true|

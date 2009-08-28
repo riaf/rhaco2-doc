@@ -1,0 +1,25 @@
+* Object のアノテーション
+Object を継承したクラスのメンバに対して，アノテーションを定義することができます。
+
+** メンバ変数のアノテーション
+メンバ変数に対してアノテーションを定義するには，変数名を __（アンダースコア2つ）で囲んだ static な変数を定義し，この変数に dict の形式で定義を記述します。
+>||
+<?php
+class Sample extends Object {
+	protected $hoge;
+	static protected $__hoge__ = 'type=string';
+}
+||<
+アノテーションに設定できる値は，デフォルトでいくつか用意されていますが，これをさらに拡張することも可能です。
+
+*** デフォルトで設定できる値
+|*キー|*概要|*デフォルト値|
+|name|||
+|type||"string"|
+|attr||null|
+|primary|bool|false|
+|get|bool|true|
+|set|bool|true|
+
+** アノテーションの拡張方法
+しらん

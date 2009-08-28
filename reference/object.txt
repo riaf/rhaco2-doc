@@ -4,4 +4,4 @@ Object は，rhaco2 のライブラリすべてのベースになる基本的な
 rhaco2 のライブラリは，すべて Object を継承しているので，Object を理解することが rhaco2 をマスターする近道になるでしょう。
 
 ** Object の持つ機能
-[[object.annotation]]
+- アノテーション - [[object.annotation]]

@@ -1,12 +1,66 @@
 rhaco2 チュートリアル #1
 * アプリケーションの開発をはじめる
+これから簡単なアプリケーションの作成を通して rhaco2 の使用方法について簡単に学んでいきます。
+ここでは，rhaco2 でアプリケーションの作成を始めるための下準備について解説します。
+
 ** アプリケーションを作成するディレクトリを作成する
-適当な物を。
+まずは，アプリケーションを保存しておくディレクトリ（フォルダー）を作成します。
+ここでは仮に「/Users/riaf/Sites/rhaco2_startup」というディレクトリを例に進めていきます。
+まずは，rhaco2_startup ディレクトリを作成してください。
+[http://img.cs.riaf.jp/e80bf7e454cc3456c3a82a943c62c1c5.png:image]
 
 ** setup.php をダウンロードする
-作成したディレクトリに [http://rhaco.org/:title=rhaco.org] から setup.php をダウンロードし、実行する。
+作成したディレクトリに [http://rhaco.org/:title=rhaco.org] から setup.php をダウンロードします。
+[http://img.cs.riaf.jp/bb2f4acf5ca51c6a83bcfa322b70a4e1.png:image]
+セットアップはブラウザでも行うことができますが，ここではすべてターミナル上での操作を解説します。
 
+** setup.php を実行し，セットアップを開始する
+setup.php をターミナル上で実行し，アプリケーションの基本的な設定を行います。
+[http://img.cs.riaf.jp/f16a232b9fe46d6a2bdc6800c56eb9d7.png:image]
+設定する項目は次のようになっています。
+|*core path|rhaco2 が設置されているパス。存在しなければ自動的にダウンロードされます。|
+|*install application|インストールするアプリケーション。既に公開されているアプリケーション名を設定すると，そのアプリケーションをインストールすることができます。（例: org.rhaco.sample.hello_world）|
+|*application url|ウェブブラウザからアクセスする基準 URL|
+|*working directory|キャッシュファイルやログファイルなどに利用される一時ディレクトリパス|
 
-あとでかく。
+セットアップが完了すると，core 以下に rhaco2 が展開されていることが確認できます。
+>|
+/Users/riaf/Sites/rhaco2_startup% tree
+.
+|-- __settings__.php
+|-- core
+|   |-- __efuncs__.php
+|   |-- __funcs__.php
+|   |-- epl
+|   |   |-- InfoClass.php
+|   |   |-- InfoDef.php
+|   |   |-- InfoDocTest.php
+|   |   |-- InfoMethod.php
+|   |   |-- Repository.php
+|   |   |-- Setup.php
+|   |   `-- Test.php
+|   |-- jump.php
+|   `-- spl
+|       |-- App.php
+|       |-- Cache.php
+|       |-- Command.php
+|       |-- Exceptions.php
+|       |-- File.php
+|       |-- FileIterator.php
+|       |-- Flow.php
+|       |-- Http.php
+|       |-- Lib.php
+|       |-- Log.php
+|       |-- Object.php
+|       |-- Paginator.php
+|       |-- Request.php
+|       |-- Tag.php
+|       |-- TagIterator.php
+|       |-- Template.php
+|       |-- Templf.php
+|       `-- Text.php
+`-- setup.php
 
+3 directories, 30 files
+|<
 

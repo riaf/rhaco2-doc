@@ -1,4 +1,4 @@
-[[../reference]] &raquo; [[object]] &raquo; [[object.annotation]]
+[[reference]] &raquo; [[object]] &raquo; [[reference/object.annotation]]
 * Object のアノテーション
 Object を継承したクラスのメンバに対して，アノテーションを定義することができます。
 
@@ -16,7 +16,7 @@ class Sample extends Object {
 *** デフォルトで設定できる値
 |*キー|*概要|*デフォルト値|
 |name|||
-|type|アクセサ（[[object.annotation.accessor]]）で使用する型宣言|"string"|
+|type|アクセサ（[[reference/object.annotation.accessor]]）で使用する型宣言|"string"|
 |attr||null|
 |primary|bool|false|
 |get|bool|true|

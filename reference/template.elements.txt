@@ -1,0 +1,174 @@
+[[reference]] &raquo; [[reference/template.elements]]
+* テンプレートの独自要素
+>>
+この記事は書きかけです
+<<
+テンプレート内で使用できる機能は，XML の要素として定義されています。
+独自の要素はすべて rt: というプレフィックスがついています。
+また，一部の機能は html の属性で定義することも可能です。
+
+** rt:template
+実行するテンプレートを切り替え
+
+*** 設定できる属性
+|*属性名|*概要|
+|name|テンプレートの名前|
+
+*** 使用例
+>||
+AAAA
+<rt:template name="aa">
+	aa
+</rt:template>
+BBBB
+<rt:template name="bb">
+	bb
+</rt:template>
+CCCC
+<rt:template name="cc">
+	cc
+</rt:template>
+||<
+
+** rt:block (rt:extends)
+テンプレートの継承
+
+*** 設定できる属性
+|*属性名|*概要|
+|name|ブロックの名前|
+|href(rt:extends)|継承元のテンプレートパス|
+
+*** 使用例
+base.html
+>||
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title><rt:block name="title">Base Title</rt:block>
+</head>
+<body>
+	<header>
+		<h1>Sample Page</h1>
+	</header>
+	<rt:block name="main">
+	<section>
+		<h2>Index Page</h2>
+		<p>Hello world!</p>
+	</section>
+	</rt:block>
+	<footer>
+		<address>© rhaco2-doc</address>
+	</footer>
+</body>
+</html>
+||<
+
+sample.html
+>||
+<rt:extends href="base.html" />
+<rt:block name="title">Sample</rt:block>
+<rt:block name="main">
+	<h2></h2>
+	<p>Hi, this is Sample.</p>
+</rt:block>
+||<
+
+** rt:comment
+テンプレート内コメント。
+出力されません。
+
+** rt:unit
+まとまりでのループ
+*** 設定できる属性
+|*属性名|*概要|
+|param||
+|offset||
+|cols||
+|rows||
+|total||
+|var||
+|counter||
+|first_value||
+|first||
+|last_value||
+|last||
+|cols_total||
+|cols_shortfall||
+|shortfall||
+|rows_total||
+
+*** 使用例
+
+** rt:loop
+ループ
+*** 設定できる属性
+|*属性名|*概要|
+|param||
+|offset||
+|limit||
+|range||
+|range_step||
+|even_value||
+|odd_value||
+|evenodd||
+|first_value||
+|first||
+|last_value||
+|last||
+|shortfall||
+|var||
+|key||
+|total||
+|counter||
+|loop_counter||
+|reverse||
+*** 要素内で使用できる要素
+|*rt:first||
+|*rt:middle||
+|*rt:last||
+|*rt:else||
+*** 使用例
+>||
+<rt:loop param="abc" loop_counter="loop_counter" key="loop_key" var="loop_var">
+	{$loop_counter}: {$loop_key} => {$loop_var}
+</rt:loop>
+||<
+
+** rt:if
+条件分岐
+param と value が一致した場合
+value が省略された場合は，param が空でないとき
+*** 設定できる属性
+|*属性名|*概要|
+|param||
+|value||
+*** 使用例
+>||
+<rt:if param="abc" value="1">bb<rt:else />aa</rt:if>
+||<
+
+** rt:pager
+ページャ
+*** 設定できる属性
+|*属性名|*概要|
+|param||
+|tag||
+|href||
+|navi||
+|counter||
+*** 使用例
+>||
+<rt:pager param="paginator" counter="3" />
+||<
+
+** rt:invalid
+例外を表示
+*** 設定できる属性
+|*属性名|*概要|
+|param||
+|var||
+|messages||
+
+** html_list
+

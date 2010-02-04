@@ -15,7 +15,7 @@
 |name|テンプレートの名前|
 
 *** 使用例
->||
+>|xml|
 AAAA
 <rt:template name="aa">
 	aa
@@ -40,7 +40,7 @@ CCCC
 
 *** 使用例
 base.html
->||
+>|xml|
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +65,7 @@ base.html
 ||<
 
 sample.html
->||
+>|xml|
 <rt:extends href="base.html" />
 <rt:block name="title">Sample</rt:block>
 <rt:block name="main">
@@ -129,7 +129,7 @@ sample.html
 |*rt:last||
 |*rt:else||
 *** 使用例
->||
+>|xml|
 <rt:loop param="abc" loop_counter="loop_counter" key="loop_key" var="loop_var">
 	{$loop_counter}: {$loop_key} => {$loop_var}
 </rt:loop>
@@ -144,7 +144,7 @@ value が省略された場合は，param が空でないとき
 |param||
 |value||
 *** 使用例
->||
+>|xml|
 <rt:if param="abc" value="1">bb<rt:else />aa</rt:if>
 ||<
 
@@ -158,7 +158,7 @@ value が省略された場合は，param が空でないとき
 |navi||
 |counter||
 *** 使用例
->||
+>|xml|
 <rt:pager param="paginator" counter="3" />
 ||<
 

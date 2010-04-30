@@ -1,0 +1,44 @@
+* アプリケーションを開発する流れ
+
+** ディレクトリを作成する
+**setup.php をダウンロードして実行する
+**ライブラリディレクトリとテンプレートディレクトリを作る
+>|zsh|
+mkdir -p libs resources/templates
+||<
+**モジュールを作る
+アプリケーションの格となる部分
+例えばブログならば
+>|zsh|
+mkdir -p libs/Blog/model
+vim libs/Blog/Blog.php
+||<
+のような感じ。
+Blog.php では，Flowを継承する
+
+>|php|
+<?php
+module('model.BlogEntry');
+class Blog extends Flow {
+    public function detail($id) {
+        $this->vars('entry', C(BlogEntry)->find_get(Q::eq('id', $id)));
+    }
+}
+||<
+
+**ハンドラを書く
+普通はindex.php
+>|sh|
+php setup.php -app
+||<
+すると作られる
+
+>|xml|
+<handler>
+    <map url="" template="index.html" />
+    <maps class="Blog">
+        <map url="entry/(\d+)" method="detail" template="detail.html" />
+    </maps>
+</handler>
+||<
+雰囲気こんなかんじ。

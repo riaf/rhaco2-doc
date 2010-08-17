@@ -1,0 +1,79 @@
+* rhaco2 入門
+
+話題沸騰中のPHPフレームワーク「rhaco2」で何かを開発してみましょう。
+
+** 対象者
+- PHP で何かが書ける人
+- シェルを少しでも触れる人
+-- OSX ならば Terminal.app ですよ
+
+** 必須なもの
+- PHP 5.2 以降のバージョンがインストールされているマシン
+- 気合い
+
+** 推奨するもの
+- PHPが動作する何らかのウェブサーバー
+-- Apache + mod_php が一番いいですよ。当然ですが。
+-- もちろん XAMPP とか MAMP でも動くよ
+- MySQL
+
+** その他
+- 筆者の環境は Ubuntu Server + Apache + PHP
+-- このサンプルでは，ssh ログインしてvimでいじってます
+-- 普段は OSX でやってるよ
+
+** 開発の流れ
+- プロジェクトディレクトリを作成する
+- setup.php をダウンロード & 実行
+- コードを書く
+
+
+* 0. Terminal を起動
+シェルってやつです。アパッチが読めるディレクトリに移動してね。
+OSX なら ~/Sites とかだよ。Linux だと ~/public_html とかだったりするね！
+もちろん，/var/www でもいいよ。
+
+
+* 1. プロジェクトを作成しよう！
+** rhaco のインストール
+setup.php をダウンロードし，実行します。
+実行すると，いくつかの項目の設定が求められます。殆どの場合，デフォルトで構いませんが，application url は正しいものにしておかないと，後で悲しい思いをしますよ。
+>|zsh|
+% mkdir sample
+% cd sample
+% wget http://rhaco.org/setup.php
+% ls
+setup.php
+% php setup.php
+% php setup.php
+core path[/path/to/www/sample/core/]:
+core installed. `/path/to/www/sample/core/jump.php`
+use `/path/to/www/sample/core/jump.php`
+application url [http://localhost/sample]: http://example.com/~riaf/sample
+working directory [/path/to/www/sample/work/]:
+application mode [dev]:
+write /path/to/www/sample/__settings__.php
+display log (on / off) [off]:
+log level (none / error / warn / info / debug) [none]:
+update __settings__.php
+||<
+
+** アプリケーション雛形の作成
+setup.php は，rhaco のインストールの他，アプリケーションのひな形の作成や，各種設定・テストなど様々な機能で開発をサポートします。
+早速， setup.php -new コマンドを実行してみましょう。
+その他のコマンドについては，php setup.php (引数なしで実行）することで実行可能なアクションのリストを表示します。
+>|zsh|
+% php setup.php -new
+create /path/to/www/sample/index.php
+create /path/to/www/sample/resources/templates
+create /path/to/www/sample/resources/media
+create /path/to/www/sample/libs
+create .htaccess (y / n) [y]:
+rewrite base [sample]: /~riaf/sample
+create /path/to/www/sample/.htaccess
+display log (on / off) [off]:
+log level (none / error / warn / info / debug) [none]:
+update __settings__.php
+||<
+
+

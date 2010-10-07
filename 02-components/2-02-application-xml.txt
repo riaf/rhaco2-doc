@@ -1,0 +1,22 @@
+* アプリケーションXML
+rhaco2 では，エントリポイント (index.php) で実行するアクション・URL・表示するテンプレートなどを定義します。
+これらの定義は XML で行ないます。
+
+
+index.php で重要なのは 2行目以降です。唯一の PHP コードはさほど重要ではありません :p
+簡単な例をあげます。
+>|xml|
+<?php require dirname(__FILE__)."/__settings__.php"; app(); ?>
+<app name="sample">
+  <handler>
+    <map url="" template="index.html" />
+    <map class="SampleFlow" name="help" template="sample/help.html" />
+  </handler>
+</app>
+||<
+
+>>
+以降，index.php が設置してある URL を http://example.com/ と仮定します。
+<<
+
+この例では， http://example.com/ へのアクセスの場合， index.html ((resources/templates/index.html)) を出力し， http://example.com/help へのアクセスの場合， SampleFlow クラス ((libs/SampleFlow.php)) の help メソッドを実行し，最終的に sample/help.html ((resources/templates/sample/help.html)) を出力します。

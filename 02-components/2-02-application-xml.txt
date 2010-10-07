@@ -1,10 +1,10 @@
-* �A�v���P�[�V����XML
-rhaco2 �ł́C�G���g���|�C���g (index.php) �Ŏ��s����A�N�V�����EURL�E�\������e���v���[�g�Ȃǂ��`���܂��B
-�����̒�`�� XML �ōs�Ȃ��܂��B
+* アプリケーションXML
+rhaco2 では，エントリポイント (index.php) で実行するアクション・URL・表示するテンプレートなどを定義します。
+これらの定義は XML で行ないます。
 
 
-index.php �ŏd�v�Ȃ̂� 2�s�ڈȍ~�ł��B�B��� PHP �R�[�h�͂��قǏd�v�ł͂���܂��� :p
-�ȒP�ȗ�������܂��B
+index.php で重要なのは 2行目以降です。唯一の PHP コードはさほど重要ではありません :p
+簡単な例をあげます。
 >|xml|
 <?php require dirname(__FILE__)."/__settings__.php"; app(); ?>
 <app name="sample">
@@ -16,7 +16,7 @@ index.php �ŏd�v�Ȃ̂� 2�s�ڈȍ~�ł��B�B��� PHP �R�[�h�͂��قǏd�v�ł͂���܂��
 ||<
 
 >>
-�ȍ~�Cindex.php ���ݒu���Ă��� URL �� http://example.com/ �Ɖ��肵�܂��B
+以降，index.php が設置してある URL を http://example.com/ と仮定します。
 <<
 
-���̗�ł́C http://example.com/ �ւ̃A�N�Z�X�̏ꍇ�C index.html ((resources/templates/index.html)) ���o�͂��C http://example.com/help �ւ̃A�N�Z�X�̏ꍇ�C SampleFlow �N���X ((libs/SampleFlow.php)) �� help ���\�b�h�����s���C�ŏI�I�� sample/help.html ((resources/templates/sample/help.html)) ���o�͂��܂��B
+この例では， http://example.com/ へのアクセスの場合， index.html ((resources/templates/index.html)) を出力し， http://example.com/help へのアクセスの場合， SampleFlow クラス ((libs/SampleFlow.php)) の help メソッドを実行し，最終的に sample/help.html ((resources/templates/sample/help.html)) を出力します。

@@ -3,4 +3,5 @@
 01-whats-rhaco/requirements=システム要件
 02-components/=rhacoについて
 02-components/2-01-directories=ディレクトリ構成
+02-components/2-02-directories=アプリケーションXML
 

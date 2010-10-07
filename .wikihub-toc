@@ -1,5 +1,6 @@
 [ja_JP]
-requirements=システム要件
-reference/=リファレンス
-tutorial/=チュートリアル
-tutorial/installation=インストール
+01-whats-rhaco/=rhacoとは
+01-whats-rhaco/requirements=システム要件
+02-components/=rhacoについて
+02-components/2-01-directories=ディレクトリ構成
+
